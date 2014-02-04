@@ -1,6 +1,6 @@
 /* 
 *     tabs recent posts vs recent comments
-*     Copyright (C) 2011 - 2013 www.gopiplus.com
+*     Copyright (C) 2011 - 2014 www.gopiplus.com
 *     http://www.gopiplus.com/work/2013/08/04/wordpress-plugin-recent-posts-vs-recent-comments-tabs/
 *     License: GPLv2 or later
 */

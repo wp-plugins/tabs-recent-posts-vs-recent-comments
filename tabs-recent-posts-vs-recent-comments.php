@@ -3,7 +3,7 @@
 Plugin Name: tabs recent posts vs recent comments
 Description: This is a jquery based lightweight plugin to create a new wordpress tabbed widget to display recent posts and recent comments.
 Author: Gopi.R
-Version: 1.0
+Version: 1.1
 Plugin URI: http://www.gopiplus.com/work/2013/08/04/wordpress-plugin-recent-posts-vs-recent-comments-tabs/
 Author URI: http://www.gopiplus.com/work/2013/08/04/wordpress-plugin-recent-posts-vs-recent-comments-tabs/
 Donate link: http://www.gopiplus.com/work/2013/08/04/wordpress-plugin-recent-posts-vs-recent-comments-tabs/
@@ -12,9 +12,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 global $wpdb;
-
-define('WP_tabs_rpvsrc_FAV', 'http://www.gopiplus.com/work/2013/08/04/wordpress-plugin-recent-posts-vs-recent-comments-tabs/');
-define('WP_tabs_rpvsrc_LINK', 'Check official website for more information <a target="_blank" href="'.WP_tabs_rpvsrc_FAV.'">click here</a>');
 
 // Main method to load tabber widget
 function tabs_rpvsrc()
@@ -94,7 +91,7 @@ function tabs_rpvsrc_control()
 	$tabs_rpvsrc_recentcomments_title = get_option('tabs_rpvsrc_recentcomments_title');
 	$tabs_rpvsrc_recentcomments_lgt = get_option('tabs_rpvsrc_recentcomments_lgt');
 	
-	if (@$_POST['tplp_submit']) 
+	if (isset($_POST['tplp_submit'])) 
 	{
 		$tabs_rpvsrc_recentposts_cnt = $_POST['tabs_rpvsrc_recentposts_cnt'];
 		$tabs_rpvsrc_recentcomments_cnt = $_POST['tabs_rpvsrc_recentcomments_cnt'];
@@ -108,20 +105,24 @@ function tabs_rpvsrc_control()
 		update_option('tabs_rpvsrc_recentcomments_title', $tabs_rpvsrc_recentcomments_title );
 		update_option('tabs_rpvsrc_recentcomments_lgt', $tabs_rpvsrc_recentcomments_lgt );
 	}
-	echo '<p>Recent posts tab title:<br><input  style="width: 200px;" type="text" value="';
+	echo '<p>'.__('Recent posts tab title:', 'tabs-recent-posts-comments').'<br><input  style="width: 200px;" type="text" value="';
 	echo $tabs_rpvsrc_recentposts_title . '" name="tabs_rpvsrc_recentposts_title" id="tabs_rpvsrc_recentposts_title" /></p>';
-	echo '<p>Number of recent posts to show:<br><input  style="width: 200px;" type="text" value="';
+	echo '<p>'.__('Number of recent posts to show:', 'tabs-recent-posts-comments').'<br><input  style="width: 200px;" type="text" value="';
 	echo $tabs_rpvsrc_recentposts_cnt . '" name="tabs_rpvsrc_recentposts_cnt" id="tabs_rpvsrc_recentposts_cnt" /></p>';
-	echo '<p>Recent comments tab title:<br><input  style="width: 200px;" type="text" value="';
+	echo '<p>'.__('Recent comments tab title:', 'tabs-recent-posts-comments').'<br><input  style="width: 200px;" type="text" value="';
 	echo $tabs_rpvsrc_recentcomments_title . '" name="tabs_rpvsrc_recentcomments_title" id="tabs_rpvsrc_recentcomments_title" /></p>';
-	echo '<p>Number of recent comments to show:<br><input  style="width: 200px;" type="text" value="';
+	echo '<p>'.__('Number of recent comments to show:', 'tabs-recent-posts-comments').'<br><input  style="width: 200px;" type="text" value="';
 	echo $tabs_rpvsrc_recentcomments_cnt . '" name="tabs_rpvsrc_recentcomments_cnt" id="tabs_rpvsrc_recentcomments_cnt" /></p>';
-	echo '<p>Comments excerpt length:<br><input  style="width: 200px;" type="text" value="';
+	echo '<p>'.__('Comments excerpt length:', 'tabs-recent-posts-comments').'<br><input  style="width: 200px;" type="text" value="';
 	echo $tabs_rpvsrc_recentcomments_lgt . '" name="tabs_rpvsrc_recentcomments_lgt" id="tabs_rpvsrc_recentcomments_lgt" /></p>';
 	
 	echo '<input type="hidden" id="tplp_submit" name="tplp_submit" value="1" />';
 	
-	echo WP_tabs_rpvsrc_LINK;
+	echo '<p>';
+	_e('Check official website for more information', 'tabs-recent-posts-comments');
+	?> 
+	<a target="_blank" href="http://www.gopiplus.com/work/2013/08/04/wordpress-plugin-recent-posts-vs-recent-comments-tabs/">
+	<?php _e('click here', 'tabs-recent-posts-comments'); ?></a></p><?php
 }
 
 /*Method to load tabber widget*/
@@ -172,15 +173,24 @@ function tabs_rpvsrc_init()
 {
 	if(function_exists('wp_register_sidebar_widget')) 
 	{
-		wp_register_sidebar_widget('Recent posts vs Recent comments', 'Recent posts vs Recent comments', 'tabs_rpvsrc_widget');
+		wp_register_sidebar_widget( __('Recent posts vs Recent comments', 'tabs-recent-posts-comments'), 
+				__('Recent posts vs Recent comments', 'tabs-recent-posts-comments'), 'tabs_rpvsrc_widget');
 	}
 	if(function_exists('wp_register_widget_control')) 
 	{
-		wp_register_widget_control('Recent posts vs Recent comments', array('Recent posts vs Recent comments', 'widgets'), 'tabs_rpvsrc_control');
+		wp_register_widget_control( __('Recent posts vs Recent comments', 'tabs-recent-posts-comments'), 
+				array( __('Recent posts vs Recent comments', 'tabs-recent-posts-comments'), 'widgets'), 'tabs_rpvsrc_control');
 	} 
 }
 
+/*Plugin textdomain*/
+function tabs_textdomain() 
+{
+	  load_plugin_textdomain( 'tabs-recent-posts-comments', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+
 /*Plugin hook*/
+add_action('plugins_loaded', 'tabs_textdomain');
 add_action("plugins_loaded", "tabs_rpvsrc_init");
 add_action('wp_enqueue_scripts', 'tabs_rpvsrc_add_javascript_files');
 register_activation_hook(__FILE__, 'tabs_rpvsrc_install');
