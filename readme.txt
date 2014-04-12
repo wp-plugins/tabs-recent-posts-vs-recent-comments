@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2013/08/04/wordpress-plugin-recent-post
 Plugin URI: http://www.gopiplus.com/work/2013/08/04/wordpress-plugin-recent-posts-vs-recent-comments-tabs/
 Tags:  tabs, widget, plugin, posts, comments
 Requires at least: 3.4
-Tested up to: 3.8
-Stable tag: 1.1
+Tested up to: 3.9
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -65,6 +65,10 @@ First version
 2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
 Plugin *.po file (tabs-recent-posts-comments.po) available in the languages folder.
 
+= 1.2 =
+
+1. Tested up to 3.9
+
 == Changelog ==
 
 = 1.0 =		
@@ -76,3 +80,7 @@ First version
 1. Tested up to 3.8
 2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
 Plugin *.po file (tabs-recent-posts-comments.po) available in the languages folder.
+
+= 1.2 =
+
+1. Tested up to 3.9
