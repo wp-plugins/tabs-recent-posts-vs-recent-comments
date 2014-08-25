@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: tabs recent posts vs recent comments\n"
-"POT-Creation-Date: 2014-02-03 22:55+0800\n"
-"PO-Revision-Date: 2014-02-03 22:55+0800\n"
+"POT-Creation-Date: 2014-08-02 23:46+0800\n"
+"PO-Revision-Date: 2014-08-02 23:46+0800\n"
 "Last-Translator: \n"
 "Language-Team: www.gopiplus.com <www.gopiplus.com>\n"
 "MIME-Version: 1.0\n"
@@ -13,24 +13,32 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../tabs-recent-posts-vs-recent-comments.php:111
+#: ../tabs-recent-posts-vs-recent-comments.php:108
 msgid "Recent posts tab title:"
 msgstr ""
 
-#: ../tabs-recent-posts-vs-recent-comments.php:113
+#: ../tabs-recent-posts-vs-recent-comments.php:110
 msgid "Number of recent posts to show:"
 msgstr ""
 
-#: ../tabs-recent-posts-vs-recent-comments.php:115
+#: ../tabs-recent-posts-vs-recent-comments.php:112
 msgid "Recent comments tab title:"
 msgstr ""
 
-#: ../tabs-recent-posts-vs-recent-comments.php:117
+#: ../tabs-recent-posts-vs-recent-comments.php:114
 msgid "Number of recent comments to show:"
 msgstr ""
 
-#: ../tabs-recent-posts-vs-recent-comments.php:119
+#: ../tabs-recent-posts-vs-recent-comments.php:116
 msgid "Comments excerpt length:"
+msgstr ""
+
+#: ../tabs-recent-posts-vs-recent-comments.php:122
+msgid "Check official website for more information"
+msgstr ""
+
+#: ../tabs-recent-posts-vs-recent-comments.php:125
+msgid "click here"
 msgstr ""
 
 #: ../tabs-recent-posts-vs-recent-comments.php:176
