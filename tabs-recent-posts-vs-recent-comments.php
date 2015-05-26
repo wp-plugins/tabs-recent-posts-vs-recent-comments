@@ -3,7 +3,7 @@
 Plugin Name: tabs recent posts vs recent comments
 Description: This is a jquery based lightweight plugin to create a new wordpress tabbed widget to display recent posts and recent comments.
 Author: Gopi Ramasamy
-Version: 1.4
+Version: 1.5
 Plugin URI: http://www.gopiplus.com/work/2013/08/04/wordpress-plugin-recent-posts-vs-recent-comments-tabs/
 Author URI: http://www.gopiplus.com/work/2013/08/04/wordpress-plugin-recent-posts-vs-recent-comments-tabs/
 Donate link: http://www.gopiplus.com/work/2013/08/04/wordpress-plugin-recent-posts-vs-recent-comments-tabs/
